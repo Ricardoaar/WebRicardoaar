@@ -4,6 +4,7 @@ import { EXPERIENCES } from "@/constants/experiences";
 import Link from "next/link";
 import { FadeInDiv } from "@/modules/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
+import GrowOnHover from "@/modules/animations/GrowOnHover";
 
 type ManageButtonProps = {
   onClick: () => void;
@@ -12,9 +13,12 @@ type ManageButtonProps = {
 }
 
 const ManageButton = ({ onClick, children, rotate = false, ...props }: ManageButtonProps) => {
-  return <button onClick={onClick} className={`w-12 flex-none ${rotate && "rotate-180"}`} {...props}>
-    {children}
-  </button>;
+  return <GrowOnHover>
+    <button onClick={onClick} className={`w-12 flex-none ${rotate && "rotate-180"}`} {...props}>
+      {children}
+    </button>
+  </GrowOnHover>;
+
 };
 
 const Experience = () => {

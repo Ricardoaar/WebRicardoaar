@@ -4,6 +4,7 @@ import { ISkill, SkillCategory } from "@/constants/skills/types";
 import { skills } from "@/constants/skills";
 import { FadeInDiv } from "@/modules/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
+import GrowOnHover from "@/modules/animations/GrowOnHover";
 
 interface ISkillProps {
   skill: ISkill;
@@ -11,8 +12,8 @@ interface ISkillProps {
 
 
 const Skill = ({ skill }: ISkillProps) => {
-  return <div
-    className={"md:w-32 w-20"}>  {skill.icon} {skill.name}</div>;
+  return <GrowOnHover
+    className={"md:w-32 w-20"}>  {skill.icon} {skill.name}</GrowOnHover>;
 };
 
 
@@ -29,13 +30,19 @@ const Skills = () => {
     <nav className={"bg-indigo-900/20 shadow-2xl w-full max-w-4xl py-4"}>
       <ul className={"flex justify-evenly items-center w-full text-center"}>
         <li>
-          <button onClick={() => setSelectedSkill("backend")}>Backend</button>
+          <GrowOnHover>
+            <button onClick={() => setSelectedSkill("backend")}>Backend</button>
+          </GrowOnHover>
         </li>
         <li>
-          <button onClick={() => setSelectedSkill("frontend")}>Frontend</button>
+          <GrowOnHover>
+            <button onClick={() => setSelectedSkill("frontend")}>Frontend</button>
+          </GrowOnHover>
         </li>
         <li>
-          <button onClick={() => setSelectedSkill("others")}>Others</button>
+          <GrowOnHover>
+            <button onClick={() => setSelectedSkill("others")}>Others</button>
+          </GrowOnHover>
         </li>
       </ul>
     </nav>
@@ -43,7 +50,7 @@ const Skills = () => {
     <div
       className={"gap-10 overflow-y-scroll pt-2 grid grid-cols-2 md:grid-cols-3 shadow-2xl text-center place-items-center w-full max-w-4xl pb-8 bg-indigo-950/10 md:h-96 h-[27rem] "}>
       {selectedSkills.map((skill) => {
-        return <Skill skill={skill} />;
+        return <Skill skill={skill} key={skill.name} />;
       })}
     </div>
 
