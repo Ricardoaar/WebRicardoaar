@@ -1,9 +1,7 @@
 import React from "react";
-import SocialMedia from "@/modules/main/SocialMedia";
 import Skills from "@/modules/main/Skills";
 import Experience from "@/modules/main/Experience";
 import CellsBackground from "@/modules/main/CellsBackground";
-import styled from "styled-components";
 import Head from "@/modules/main/Head";
 
 const Footer = () => {
@@ -11,7 +9,6 @@ const Footer = () => {
     <strong>@Ricardooar</strong>
   </div>;
 };
-
 
 
 export default function Home() {
