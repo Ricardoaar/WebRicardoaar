@@ -12,3 +12,9 @@ export type SkillsType = {
 
 
 export type SkillCategory = "backend" | "frontend" | "others"
+
+export enum SkillCategoryEnum {
+  BACKEND = "backend",
+  FRONTEND = "frontend",
+  OTHERS = "others"
+}

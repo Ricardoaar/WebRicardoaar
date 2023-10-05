@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ISkill, SkillCategory } from "@/constants/skills/types";
+import { ISkill, SkillCategory, SkillCategoryEnum } from "@/constants/skills/types";
 import { skills } from "@/constants/skills";
 import { FadeInDiv } from "@/modules/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
@@ -27,21 +27,28 @@ const Skills = () => {
                     className={"w-full justify-center flex flex-col items-center pt-10  md:pt-0"}>
 
 
-    <nav className={"bg-indigo-900/20 shadow-2xl w-full max-w-4xl py-4"}>
+    <nav className={"dark:bg-indigo-900/20  shadow-2xl w-full max-w-4xl py-4"}>
       <ul className={"flex justify-evenly items-center w-full text-center"}>
         <li>
           <GrowOnHover>
-            <button onClick={() => setSelectedSkill("backend")}>Backend</button>
+            <button className={selectedSkill === SkillCategoryEnum.BACKEND ? "font-black text-xl" : ""}
+                    onClick={() => setSelectedSkill("backend")}>Backend
+            </button>
           </GrowOnHover>
         </li>
         <li>
           <GrowOnHover>
-            <button onClick={() => setSelectedSkill("frontend")}>Frontend</button>
+            <button className={selectedSkill === SkillCategoryEnum.FRONTEND ? "font-black text-xl" : ""}
+
+                    onClick={() => setSelectedSkill("frontend")}>Frontend
+            </button>
           </GrowOnHover>
         </li>
         <li>
           <GrowOnHover>
-            <button onClick={() => setSelectedSkill("others")}>Others</button>
+            <button className={selectedSkill === SkillCategoryEnum.OTHERS ? "font-black text-xl" : ""}
+                    onClick={() => setSelectedSkill("others")}>Others
+            </button>
           </GrowOnHover>
         </li>
       </ul>

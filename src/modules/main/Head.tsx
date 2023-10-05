@@ -9,7 +9,7 @@ const Head = () => {
   return <FadeInDiv
     delay={AnimationTiming.HEAD.delay}
     duration={AnimationTiming.HEAD.duration}
-    className={"flex flex-col gap-16 entry"}>
+    className={"flex flex-col gap-16 entry md:px-0 px-2"}>
 
     <h2 className={"text-4xl  text-center"}>
       Hi, I'm Ricardo
