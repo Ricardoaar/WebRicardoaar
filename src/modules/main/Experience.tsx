@@ -2,6 +2,8 @@
 import React from "react";
 import { EXPERIENCES } from "@/constants/experiences";
 import Link from "next/link";
+import { FadeInDiv } from "@/modules/animations/FadeIn";
+import { AnimationTiming } from "@/constants/animations";
 
 type ManageButtonProps = {
   onClick: () => void;
@@ -31,7 +33,10 @@ const Experience = () => {
   };
   const formatter = new Intl.ListFormat("en", { style: "long", type: "conjunction" });
 
-  return <section className={"flex flex-col gap-9  w-full max-w-4xl md:px-0 px-1"}>
+  return <FadeInDiv
+    delay={AnimationTiming.EXPERIENCE.delay}
+    duration={AnimationTiming.EXPERIENCE.duration}
+    className={"flex flex-col gap-9  w-full max-w-4xl md:px-0 px-1"}>
     <h3 className={"text-4xl font-bold text-center"}>
       Professional Experience
     </h3>
@@ -71,7 +76,7 @@ const Experience = () => {
     </div>
 
 
-  </section>;
+  </FadeInDiv>;
 };
 
 export default Experience;
