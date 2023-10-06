@@ -11,13 +11,11 @@ const CellsBackground = () => {
     <>
       {cellFrom.map((_, index) => {
 
-        return <div className={cells.firefly} key={index}></div>;
+        return <div className={cells.particle} key={index}></div>;
       })}
     </>);
 };
 
 const OptimizedCellsBackground = React.memo(CellsBackground);
 
-export default OptimizedCellsBackground
-
-;
+export default OptimizedCellsBackground;

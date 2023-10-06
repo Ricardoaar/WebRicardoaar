@@ -1,14 +1,14 @@
 $quantity: 15;
 
 
-.firefly {
+.particle {
   position: fixed;
   left: 50%;
   top: 50%;
   width: 0.4vw;
   height: 0.4vw;
   margin: -0.2vw 0 0 9.8vw;
-  animation: ease 200s alternate infinite;
+  animation: ease 150s alternate infinite;
   pointer-events: none;
 
   &::before,
@@ -44,7 +44,7 @@ $quantity: 15;
   $rotationSpeed: random(10) + 8s;
 
 
-  .firefly:nth-child(#{$i}) {
+  .particle:nth-child(#{$i}) {
     animation-name: move#{$i};
     &::before {
       animation-duration: #{$rotationSpeed};

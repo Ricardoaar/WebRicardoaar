@@ -9,14 +9,14 @@ const GrowOnHoverDiv = styled.div`
   }
 `;
 
-interface GrowOnHoverProps {
+interface GrowOnHoverProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: React.ReactNode;
 }
 
-const GrowOnHover = ({ children, className }: GrowOnHoverProps) => {
+const GrowOnHover = ({ children, className, ...divProps }: GrowOnHoverProps) => {
   return (
-    <GrowOnHoverDiv className={className}>
+    <GrowOnHoverDiv className={className} {...divProps}>
       {children}
     </GrowOnHoverDiv>
   );

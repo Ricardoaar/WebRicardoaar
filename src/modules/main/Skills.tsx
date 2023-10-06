@@ -11,10 +11,10 @@ interface ISkillProps {
 }
 
 
-const Skill = ({ skill }: ISkillProps) => {
+const Skill = React.memo(({ skill }: ISkillProps) => {
   return <GrowOnHover
-    className={"md:w-32 w-20"}>  {skill.icon} {skill.name}</GrowOnHover>;
-};
+    className={"md:w-32 w-20"} aria-label={`Skill: ${skill.name}`}>  {skill.icon} {skill.name}</GrowOnHover>;
+});
 
 
 const Skills = () => {
@@ -31,23 +31,28 @@ const Skills = () => {
       <ul className={"flex justify-evenly items-center w-full text-center"}>
         <li>
           <GrowOnHover>
-            <button className={selectedSkill === SkillCategoryEnum.BACKEND ? "font-black text-xl" : ""}
+            <button aria-label={"View backend skills"}
+                    className={selectedSkill === SkillCategoryEnum.BACKEND ? "font-black text-xl" : ""}
                     onClick={() => setSelectedSkill("backend")}>Backend
             </button>
           </GrowOnHover>
         </li>
         <li>
           <GrowOnHover>
-            <button className={selectedSkill === SkillCategoryEnum.FRONTEND ? "font-black text-xl" : ""}
+            <button
+              aria-label={"View frontend skills"}
+              className={selectedSkill === SkillCategoryEnum.FRONTEND ? "font-black text-xl" : ""}
 
-                    onClick={() => setSelectedSkill("frontend")}>Frontend
+              onClick={() => setSelectedSkill("frontend")}>Frontend
             </button>
           </GrowOnHover>
         </li>
         <li>
           <GrowOnHover>
-            <button className={selectedSkill === SkillCategoryEnum.OTHERS ? "font-black text-xl" : ""}
-                    onClick={() => setSelectedSkill("others")}>Others
+            <button
+              aria-label={"View others skills"}
+              className={selectedSkill === SkillCategoryEnum.OTHERS ? "font-black text-xl" : ""}
+              onClick={() => setSelectedSkill("others")}>Others
             </button>
           </GrowOnHover>
         </li>
@@ -65,4 +70,6 @@ const Skills = () => {
   </FadeInDiv>;
 };
 
-export default Skills;
+const OptimizedSkills = React.memo(Skills);
+
+export default OptimizedSkills;

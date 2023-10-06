@@ -10,8 +10,8 @@ const SocialMedia = () => {
 
         const { icon } = social;
         return <div className={"flex flex-col items-center justify-center"} key={social.name}>
-          <GrowOnHover className={"w-12 h-12"}>
-            <a href={social.link} target={"_blank"}>
+          <GrowOnHover className={"w-12 h-12"} >
+            <a href={social.link} target={"_blank"} aria-label={`Contact me by ${social.name}`}>
               {icon && icon}
             </a>
           </GrowOnHover>
@@ -22,4 +22,6 @@ const SocialMedia = () => {
   );
 };
 
-export default SocialMedia;
+const OptimizedSocialMedia = React.memo(SocialMedia);
+
+export default OptimizedSocialMedia;

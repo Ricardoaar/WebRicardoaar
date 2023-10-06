@@ -6,15 +6,21 @@ import { FadeInDiv } from "@/modules/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
 import GrowOnHover from "@/modules/animations/GrowOnHover";
 
+const ARROW_SVG = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <path fillRule="evenodd" clipRule="evenodd"
+        d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z"
+        fill="#fff" />
+</svg>;
+
 type ManageButtonProps = {
   onClick: () => void;
   children: React.ReactNode;
   rotate?: boolean;
-}
+} & React.HTMLAttributes<HTMLButtonElement>;
 
-const ManageButton = ({ onClick, children, rotate = false, ...props }: ManageButtonProps) => {
+const ManageButton = ({ children, rotate = false, ...buttonProps }: ManageButtonProps) => {
   return <GrowOnHover>
-    <button onClick={onClick} className={`w-12 flex-none ${rotate && "rotate-180"}`} {...props}>
+    <button {...buttonProps} className={`w-12 flex-none ${rotate && "rotate-180"}`}>
       {children}
     </button>
   </GrowOnHover>;
@@ -47,17 +53,16 @@ const Experience = () => {
     <div className={"flex gap-6  justify-evenly flex-[0 1 0]"}>
       {
         isTherePrevious && <ManageButton onClick={onPrevious}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path fillRule="evenodd" clipRule="evenodd"
-                  d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z"
-                  fill="#fff" />
-          </svg>
+          {
+            ARROW_SVG
+          }
         </ManageButton>
       }
 
 
       <div className={"flex flex-col gap-2 flex-grow"}>
-        <Link href={website} target={"_blank"}><h3 className={"text-2xl font-bold"}>{company}</h3></Link>
+        <Link className={"w-fit"} aria-label={`Visit ${company} page `} href={website} target={"_blank"}><h3
+          className={"text-2xl font-bold"}>{company}</h3></Link>
 
         <h4 className={"text-xl"}>{title}</h4>
         <p>{description}</p>
@@ -67,16 +72,10 @@ const Experience = () => {
 
       </div>
       {
-        isThereNext && <ManageButton onClick={onNext} rotate>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path fillRule="evenodd" clipRule="evenodd"
-                  d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z"
-                  fill="#fff" />
-          </svg>
-
+        isThereNext && <ManageButton onClick={onNext} aria-label={"Next"} rotate>
+          {ARROW_SVG}
         </ManageButton>
       }
-
     </div>
 
 
