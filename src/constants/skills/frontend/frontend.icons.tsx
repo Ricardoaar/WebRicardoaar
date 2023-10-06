@@ -1,4 +1,4 @@
-export const REACT_SVG = <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="fill" height="fill"
+export const REACT_SVG = <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  
                               viewBox="0 0 80 80">
   <path fill="#8bb7f0"
         d="M46.5,40c0,3.593-2.907,6.5-6.5,6.5s-6.5-2.907-6.5-6.5s2.907-6.5,6.5-6.5S46.5,36.407,46.5,40z"></path>

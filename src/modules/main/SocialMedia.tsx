@@ -9,7 +9,7 @@ const SocialMedia = () => {
       {SOCIAL_MEDIA.map((social) => {
 
         const { icon } = social;
-        return <div className={"flex flex-col items-center justify-center"}>
+        return <div className={"flex flex-col items-center justify-center"} key={social.name}>
           <GrowOnHover className={"w-12 h-12"}>
             <a href={social.link} target={"_blank"}>
               {icon && icon}
