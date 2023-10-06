@@ -1,13 +1,17 @@
 import React from "react";
+import cells from "@/scss/animation.module.scss";
 
-const totalCells = 15;
-const cells = Array.from({ length: totalCells });
+
+// @ts-ignore
+const cellFrom = Array.from({ length: cells.quantity });
 
 const CellsBackground = () => {
+
   return (
     <>
-      {cells.map((_, index) => {
-        return <div className="firefly" key={index}></div>;
+      {cellFrom.map((_, index) => {
+
+        return <div className={cells.firefly} key={index}></div>;
       })}
     </>);
 };
