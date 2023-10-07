@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body.notransition * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+
 :root {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
@@ -40,7 +48,7 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
 
-    background: rgb(39, 39, 40);
+    background: #24223f;
 }
 
 /* Handle on hover */

@@ -1,6 +1,6 @@
 import React from "react";
 import { SOCIAL_MEDIA } from "@/constants/media";
-import GrowOnHover from "@/modules/animations/GrowOnHover";
+import GrowOnHover from "@/components/animations/GrowOnHover";
 
 const SocialMedia = () => {
   return (

@@ -1,7 +1,7 @@
 "use client";
-import SocialMedia from "@/modules/main/SocialMedia";
+import SocialMedia from "@/components/sections/SocialMedia";
 import React from "react";
-import { FadeInDiv } from "@/modules/animations/FadeIn";
+import { FadeInDiv } from "@/components/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
 
 

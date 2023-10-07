@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { ISkill, SkillCategory, SkillCategoryEnum } from "@/constants/skills/types";
 import { skills } from "@/constants/skills";
-import { FadeInDiv } from "@/modules/animations/FadeIn";
+import { FadeInDiv } from "@/components/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
-import GrowOnHover from "@/modules/animations/GrowOnHover";
+import GrowOnHover from "@/components/animations/GrowOnHover";
 
 interface ISkillProps {
   skill: ISkill;
