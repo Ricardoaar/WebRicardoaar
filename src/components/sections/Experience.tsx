@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
-import { EXPERIENCES } from "@/constants/experiences";
+import React, { useEffect, useRef } from "react";
+import { EXPERIENCES, IExperience } from "@/constants/experiences";
 import Link from "next/link";
 import { FadeInDiv } from "@/components/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
 import GrowOnHover from "@/components/animations/GrowOnHover";
 import { ARROW_SVG } from "@/constants/utils.icons";
+import { next } from "stylis";
 
 
 type ManageButtonProps = {
@@ -23,13 +24,35 @@ const ManageButton = ({ children, rotate = false, ...buttonProps }: ManageButton
 
 };
 
-const Experience = () => {
+const Experience = ({ experience, className }: { experience: IExperience, className: string }) => {
+  const { company, website, title, years, description, technologies } = experience;
+  const formatter = new Intl.ListFormat("en", { style: "long", type: "conjunction" });
 
-  const [currentXp, setCurrentXp] = React.useState<number>(1);
-  const isThereNext = currentXp + 1 < EXPERIENCES.length;
-  const isTherePrevious = currentXp > 0;
-  const currentExperience = EXPERIENCES[currentXp];
-  const { company, title, description, technologies, website, years } = currentExperience;
+
+  return <div className={`flex flex-col gap-2 flex-grow ${className}`}>
+    <Link className={"w-fit"} aria-label={`Visit ${company} page `} href={website} target={"_blank"}><h3
+      className={"text-2xl font-bold"}>{company}</h3></Link>
+    <h4 className={"text-xl"}>{title}</h4>
+    <p>{description}</p>
+    <p>{formatter.format(technologies)}</p>
+    <p className={"italic pt-2"}> {years}</p>
+  </div>;
+};
+
+const Experiences = () => {
+
+  const [currentXp, setCurrentXp] = React.useState<number>(0);
+  const prevExp = EXPERIENCES[currentXp - 1];
+  const nextExp = EXPERIENCES[currentXp + 1];
+
+  const scrollRef = useRef<HTMLDivElement>();
+
+
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollLeft = scrollRef.current?.offsetWidth * currentXp;
+  }, [currentXp]);
+
   const onNext = () => {
     setCurrentXp(currentXp + 1);
   };
@@ -37,7 +60,6 @@ const Experience = () => {
   const onPrevious = () => {
     setCurrentXp(currentXp - 1);
   };
-  const formatter = new Intl.ListFormat("en", { style: "long", type: "conjunction" });
 
   return <FadeInDiv
     delay={AnimationTiming.EXPERIENCE.delay}
@@ -47,35 +69,21 @@ const Experience = () => {
       Professional Experience
     </h3>
     <div className={"flex gap-6  justify-evenly flex-[0 1 0]"}>
-      {
-        isTherePrevious && <ManageButton onClick={onPrevious}>
-          {
-            ARROW_SVG
-          }
-        </ManageButton>
-      }
-
-
-      <div className={"flex flex-col gap-2 flex-grow"}>
-        <Link className={"w-fit"} aria-label={`Visit ${company} page `} href={website} target={"_blank"}><h3
-          className={"text-2xl font-bold"}>{company}</h3></Link>
-
-        <h4 className={"text-xl"}>{title}</h4>
-        <p>{description}</p>
-        <p>{formatter.format(technologies)}</p>
-
-        <p className={"italic pt-2"}> {years}</p>
-
+      {prevExp && <ManageButton onClick={onPrevious}>
+        {ARROW_SVG}
+      </ManageButton>}
+      <div className={"w-full flex    overflow-x-hidden"} ref={scrollRef}>
+        {EXPERIENCES.map((experience) => <Experience className={"w-full min-w-[100%]"} experience={experience} />)}
       </div>
-      {
-        isThereNext && <ManageButton onClick={onNext} aria-label={"Next"} rotate>
-          {ARROW_SVG}
-        </ManageButton>
-      }
+
+
+      {nextExp && <ManageButton onClick={onNext} aria-label={"Next"} rotate>
+        {ARROW_SVG}
+      </ManageButton>}
     </div>
 
 
   </FadeInDiv>;
 };
 
-export default Experience;
+export default Experiences;

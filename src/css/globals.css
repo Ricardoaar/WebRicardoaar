@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    scroll-behavior: smooth;
+}
+
 body.notransition * {
     -webkit-transition: none !important;
     -moz-transition: none !important;
     -o-transition: none !important;
     transition: none !important;
+    scroll-behavior: unset !important;
+
+
 }
 
 
@@ -21,6 +28,8 @@ body.notransition * {
         --foreground-rgb: 255, 255, 255;
         --background-start-rgb: 0, 0, 0;
         --background-end-rgb: 0, 0, 0;
+
+
     }
 }
 
