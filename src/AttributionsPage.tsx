@@ -13,6 +13,11 @@ const AttributionsPage = () => {
           Vector and Icons by icons8
           <a href="">https://icons8.com/icons</a>
         </li>
+        <li>
+          Vectors and icons by <a href="https://www.figma.com/community/file/1166831539721848736?ref=svgrepo.com"
+                                  target="_blank">Solar Icons</a> in CC Attribution License via <a
+          href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>
+        </li>
       </ul>
 
 

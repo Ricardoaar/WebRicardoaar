@@ -7,13 +7,14 @@ import Head from "@/components/sections/Head";
 import HomeOptions from "@/components/buttons/HomeOptions";
 import AppContext from "@/app/ReactAppContext";
 import Footer from "@/components/sections/Footer";
-import { ToastContainer } from "react-toastify";
+import ToastWrapper from "@/components/sections/ToastWrapper";
 
 
 export default function Home() {
   return (
     <AppContext>
-      <main className="flex font-sans min-h-screen flex-col items-center justify-between pt-24 linear-bg gap-8">
+      <main
+        className="flex font-sans dark:text-white text-gray-700 min-h-screen flex-col items-center justify-between pt-24 linear-bg gap-8">
         <HomeOptions />
         <CellsBackground />
         <div className={"flex flex-col gap-8 justify-center  w-full max-w-4xl "}>
@@ -23,13 +24,7 @@ export default function Home() {
         </div>
         <Footer />
       </main>
-      <ToastContainer
-        position={"bottom-left"}
-        theme={"dark"}
-        autoClose={2000}
-        hideProgressBar
-        icon={"🥺"}
-      />
+      <ToastWrapper />
     </AppContext>
   );
 }

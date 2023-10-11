@@ -6,7 +6,6 @@ import { FadeInDiv } from "@/components/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
 import GrowOnHover from "@/components/animations/GrowOnHover";
 import { ARROW_SVG } from "@/constants/utils.icons";
-import { next } from "stylis";
 
 
 type ManageButtonProps = {
@@ -45,7 +44,7 @@ const Experiences = () => {
   const prevExp = EXPERIENCES[currentXp - 1];
   const nextExp = EXPERIENCES[currentXp + 1];
 
-  const scrollRef = useRef<HTMLDivElement>();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
 
   useEffect(() => {

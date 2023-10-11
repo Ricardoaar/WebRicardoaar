@@ -12,8 +12,6 @@ body.notransition * {
     -o-transition: none !important;
     transition: none !important;
     scroll-behavior: unset !important;
-
-
 }
 
 
@@ -35,32 +33,11 @@ body.notransition * {
 
 body {
     color: rgb(var(--foreground-rgb));
-
 }
 
 
-.linear-bg {
-    background: linear-gradient(180deg, #24223f 0%, rgba(11, 9, 9, 0.93) 99.48%);
-}
 
 
-/* width */
-::-webkit-scrollbar {
-    width: 6px;
-}
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: rgba(241, 241, 241, 0.27);
-}
 
-/* Handle */
-::-webkit-scrollbar-thumb {
 
-    background: #24223f;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(45, 45, 47, 0.69);
-}

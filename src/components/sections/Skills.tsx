@@ -60,7 +60,7 @@ const Skills = () => {
     </nav>
 
     <div
-      className={"gap-10 overflow-y-scroll pt-2 grid grid-cols-2 md:grid-cols-3 shadow-2xl text-center place-items-center w-full max-w-4xl pb-8 bg-indigo-950/10 md:h-96 h-[27rem] "}>
+      className={"gap-10 overflow-y-scroll pt-2 grid grid-cols-2 md:grid-cols-3 shadow-2xl text-center place-items-center w-full max-w-4xl pb-8 dark:bg-indigo-950/10 md:h-96 h-[27rem] "}>
       {selectedSkills.map((skill) => {
         return <Skill skill={skill} key={skill.name} />;
       })}

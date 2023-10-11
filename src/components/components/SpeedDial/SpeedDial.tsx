@@ -47,7 +47,7 @@ const SpeedDial = ({ icon = "", speedDialOptions = [], setup = defaultSetup }: S
       className={"fixed top-10 right-10 flex flex-col gap-2"}
     >
       <button aria-label={"settings"}
-              className={"rounded-full bg-[#24223f] w-12 h-12 flex items-center justify-center shadow-md shadow-gray-950"}
+              className={"rounded-full bg-blue-100/40 dark:bg-[#24223f] w-12 h-12 flex items-center justify-center shadow-md dark:shadow-gray-950"}
               onClick={onClick}
       >
       <span className={"w-8 h-8 "}>
@@ -63,7 +63,7 @@ const SpeedDial = ({ icon = "", speedDialOptions = [], setup = defaultSetup }: S
               <button onClick={options.onClick}
                       aria-label={options.tooltip}
                       title={options.tooltip}
-                      className={"flex items-center justify-center mt-2 w-12 h-12 bg-[#24223f] rounded-full shadow-md shadow-gray-950"}>
+                      className={"flex items-center justify-center mt-2 w-12 h-12 dark:bg-[#24223f] rounded-full shadow-md dark:shadow-gray-950"}>
                 <div className={`w-5 h-5 flex justify-center items-center ${options.fixClasses}`}>
                   {options.icon}
                 </div>

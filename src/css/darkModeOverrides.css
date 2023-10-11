@@ -1,0 +1,52 @@
+
+.linear-bg {
+    background: linear-gradient(180deg, #e7e7ff 0%, rgba(193, 242, 249, 0.93) 99.48%);
+}
+
+.dark .linear-bg {
+    background: linear-gradient(180deg, #24223f 0%, rgba(11, 9, 9, 0.93) 99.48%);
+}
+
+.dark .svg__mode {
+    fill: #fff;
+}
+
+.svg__mode {
+    fill: #0d1621;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.27);
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.27);
+}
+
+
+/* Handle */
+.dark ::-webkit-scrollbar-thumb {
+
+    background: #24223f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a6abe6;
+}
+
+
+/* Handle on hover */
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(45, 45, 47, 0.69);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #757bb0;
+}

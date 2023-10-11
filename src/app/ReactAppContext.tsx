@@ -1,23 +1,29 @@
 "use client";
 import React, { PropsWithChildren, ReactPropTypes } from "react";
+import useDarkMode from "@/app/useDarkMode";
 
 
 type ReactAppContextType = {
   areAnimationsEnabled: boolean;
   enabledAnimations: () => void;
   disabledAnimations: () => void;
+  isDarkModeEnabled: boolean;
+  setIsDarkModeEnabled: (isDarkModeEnabled: boolean) => void;
 }
 const ReactAppContext = React.createContext<ReactAppContextType>({
   areAnimationsEnabled: true,
   enabledAnimations: () => {
   },
   disabledAnimations: () => {
+  },
+  isDarkModeEnabled: false,
+  setIsDarkModeEnabled: () => {
   }
 });
 
 const AppContext = ({ children }: PropsWithChildren) => {
   const [areAnimationsEnabled, setAreAnimationsEnabled] = React.useState(true);
-
+  const { isDarkModeEnabled, setIsDarkModeEnabled } = useDarkMode();
   const enabledAnimations = () => {
     document.body.classList.remove("notransition");
     setAreAnimationsEnabled(true);
@@ -31,7 +37,9 @@ const AppContext = ({ children }: PropsWithChildren) => {
   return <ReactAppContext.Provider value={{
     areAnimationsEnabled,
     enabledAnimations,
-    disabledAnimations
+    disabledAnimations,
+    isDarkModeEnabled,
+    setIsDarkModeEnabled
   }}>
     {children}
   </ReactAppContext.Provider>;
