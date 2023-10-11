@@ -43,7 +43,7 @@ export const SOCIAL_MEDIA: SocialMedia[] = [{
   </svg>
 
 }, {
-  link: "https://w.app/Ka7je8",
+  link: "https://api.whatsapp.com/send?phone=5212482088307&text=Hi!%20Let%27s%20work%20together!%20%F0%9F%92%BB",
   name: "WhatsApp",
   icon: <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0,0,256,256">
     <g fillOpacity="0" fill="#000000" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt"
