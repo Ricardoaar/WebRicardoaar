@@ -3,7 +3,7 @@ import React, { PropsWithChildren, ReactPropTypes } from "react";
 import useDarkMode from "@/app/useDarkMode";
 
 
-type ReactAppContextType = {
+export type ReactAppContextType = {
   areAnimationsEnabled: boolean;
   enabledAnimations: () => void;
   disabledAnimations: () => void;

@@ -1,10 +1,22 @@
+"use client";
 import AttributionsPage from "@/AttributionsPage";
 import React from "react";
+import Modal from "@/components/components/Modal/Modal";
 
 const Footer = () => {
-  return <div className={"h-18 text-center py-2 flex justify-center items-center flex-col bg-blue-950/20 w-full"}>
+  const [isOpen, setIsOpen] = React.useState(false);
+  console.log("isOpen", isOpen);
+  return <div className={"h-18 text-center py-2 flex justify-center items-center gap-3 bg-blue-950/20 w-full"}>
     <strong>@Ricardooar</strong>
-    {/*<AttributionsPage />*/}
+    <button className={"text-blue-500"} onClick={() => {
+      setIsOpen(true);
+    }}>Attributions
+    </button>
+
+    {isOpen && <Modal isOpen setIsOpen={setIsOpen}>
+      <AttributionsPage />
+    </Modal>}
+
   </div>;
 };
 

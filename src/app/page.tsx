@@ -8,6 +8,7 @@ import HomeOptions from "@/components/buttons/HomeOptions";
 import AppContext from "@/app/ReactAppContext";
 import Footer from "@/components/sections/Footer";
 import ToastWrapper from "@/components/sections/ToastWrapper";
+import Modal from "@/components/components/Modal/Modal";
 
 
 export default function Home() {
@@ -25,6 +26,8 @@ export default function Home() {
         <Footer />
       </main>
       <ToastWrapper />
+
+
     </AppContext>
   );
 }
