@@ -6,6 +6,7 @@ import { FadeInDiv } from "@/components/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
 import GrowOnHover from "@/components/animations/GrowOnHover";
 import { ARROW_SVG } from "@/constants/utils.icons";
+import { useExperiences } from "@/api/experiences/useExperiences";
 
 
 type ManageButtonProps = {
@@ -24,6 +25,7 @@ const ManageButton = ({ children, rotate = false, ...buttonProps }: ManageButton
 };
 
 const Experience = ({ experience, className }: { experience: IExperience, className: string }) => {
+
   const { company, website, title, years, description, technologies } = experience;
   const formatter = new Intl.ListFormat("en", { style: "long", type: "conjunction" });
 
@@ -39,7 +41,7 @@ const Experience = ({ experience, className }: { experience: IExperience, classN
 };
 
 const Experiences = () => {
-
+  const { data: experiences } = useExperiences();
   const [currentXp, setCurrentXp] = React.useState<number>(0);
   const prevExp = EXPERIENCES[currentXp - 1];
   const nextExp = EXPERIENCES[currentXp + 1];

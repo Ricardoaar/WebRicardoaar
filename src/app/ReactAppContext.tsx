@@ -1,8 +1,22 @@
 "use client";
-import React, { PropsWithChildren, ReactPropTypes } from "react";
+import React, { PropsWithChildren, ReactPropTypes, useRef } from "react";
 import useDarkMode from "@/app/useDarkMode";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+
+type window = typeof window & {
+  env: {
+    baseUrl: string;
+  }
+}
+
+const createApolloClient = () => {
+  return new ApolloClient({
 
 
+    uri: process.env.API_URL || process.env.NEXT_PUBLIC_API_URL,
+    cache: new InMemoryCache()
+  });
+};
 export type ReactAppContextType = {
   areAnimationsEnabled: boolean;
   enabledAnimations: () => void;
@@ -34,6 +48,8 @@ const AppContext = ({ children }: PropsWithChildren) => {
     setAreAnimationsEnabled(false);
   };
 
+  const { current: client } = useRef(createApolloClient());
+
   return <ReactAppContext.Provider value={{
     areAnimationsEnabled,
     enabledAnimations,
@@ -41,8 +57,12 @@ const AppContext = ({ children }: PropsWithChildren) => {
     isDarkModeEnabled,
     setIsDarkModeEnabled
   }}>
-    {children}
+    <ApolloProvider client={client}>
+      {children}
+    </ApolloProvider>
   </ReactAppContext.Provider>;
+
+
 };
 
 export const useAppContext = () => {
