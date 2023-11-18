@@ -19,7 +19,7 @@ export const EXPERIENCES: IExperience[] = [
   {
     company: "LagInc",
     title: "Game Developer",
-    description: "Worked in multiple projects using Unity, C#, Javascript, HTML, CSS",
+    description: "Worked in multiple projects of different industries using Unity, C#, Javascript, HTML, CSS",
     technologies: ["Unity", "C#", "Javascript", "HTML", "CSS"],
     website: "https://lag-inc.itch.io/",
     years: "2019 - 2021"
@@ -27,7 +27,7 @@ export const EXPERIENCES: IExperience[] = [
   {
     company: "Ubidots",
     title: "Web Developer",
-    description: "Worked with React and multiple components",
+    description: "Lead projects and worked in multiple features using React",
     technologies: ["React", "Node", "Typescript", "Javascript", "HTML", "CSS"],
     website: "https://ubidots.com/",
     years: "2022 - 2023"
@@ -35,7 +35,7 @@ export const EXPERIENCES: IExperience[] = [
   {
     company: "Ocelotbot",
     title: "Fullstack Developer",
-    description: "Worked in multiple projects using React, Node, Typescript, Javascript, HTML, CSS",
+    description: "Solved bugs and added new features to the bot and the website",
     technologies: ["React", "Node", "Typescript", "Javascript", "HTML", "CSS", "NextJS", "MongoDB"],
     website: "https://ocelotbot.com/",
     years: "2023 - current"
