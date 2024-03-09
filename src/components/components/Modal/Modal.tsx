@@ -29,7 +29,7 @@ const Modal = ({ children, isOpen: isOpenByOutside, domId = "modal", setIsOpen: 
   setIsOpen?: (isOpen: boolean) => void,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const modalRef = React.useRef<HTMLDivElement>(null);
+  const modalRef = React.useRef<HTMLDivElement>();
 
   useKeydown("Escape", () => {
     setIsOpen(false);

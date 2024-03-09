@@ -77,7 +77,7 @@ const Experiences = () => {
         {ARROW_SVG}
       </ManageButton>}
       <div className={"w-full flex    overflow-x-hidden"} ref={scrollRef}>
-        {EXPERIENCES.map((experience) => <Experience className={"w-full min-w-[100%]"} experience={experience} />)}
+        {EXPERIENCES.map((experience) => <Experience key={experience.title} className={"w-full min-w-[100%]"} experience={experience} />)}
       </div>
 
 

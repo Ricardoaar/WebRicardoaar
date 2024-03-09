@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactAppContextType, useAppContext } from "@/app/ReactAppContext";
+import { forwardRef } from "react";
 
 interface FadeInDivProps {
   duration?: number;
@@ -9,28 +10,28 @@ interface FadeInDivProps {
 }
 
 const withAppContext = (Component: React.FC) => {
-  return (props: any) => {
+  return forwardRef((props: any, ref) => {
     const appContext = useAppContext();
-    return <Component appContext={appContext} {...props} />;
-  };
+    return <Component appContext={appContext} {...props} ref={ref} />;
+  });
 };
 
 
 export const FadeInDiv = withAppContext(styled.div<FadeInDivProps>`
-  animation: fadeIn ${({ duration = 2, appContext }: FadeInDivProps) => {
-    if (appContext.areAnimationsEnabled) {
-      return duration;
-    }
-    return 0;
-  }}s ease-in-out;
+    animation: fadeIn ${({ duration = 2, appContext }: FadeInDivProps) => {
+        if (appContext.areAnimationsEnabled) {
+            return duration;
+        }
+        return 0;
+    }}s ease-in-out;
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
 
-  }
+    }
 `);

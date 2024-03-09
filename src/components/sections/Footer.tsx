@@ -5,7 +5,6 @@ import Modal from "@/components/components/Modal/Modal";
 
 const Footer = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  console.log("isOpen", isOpen);
   return <div className={"h-18 text-center py-2 flex justify-center items-center gap-3 bg-blue-950/20 w-full"}>
     <strong>@Ricardooar</strong>
     <button className={"text-blue-500"} onClick={() => {
