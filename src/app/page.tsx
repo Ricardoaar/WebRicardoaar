@@ -1,14 +1,8 @@
 import "react-toastify/dist/ReactToastify.css";
 import React from "react";
-import Skills from "@/components/sections/Skills";
-import Experience from "@/components/sections/Experience";
-import CellsBackground from "@/components/sections/CellsBackground";
-import Head from "@/components/sections/Head";
 import HomeOptions from "@/components/buttons/HomeOptions";
 import AppContext from "@/app/ReactAppContext";
-import Footer from "@/components/sections/Footer";
-import ToastWrapper from "@/components/sections/ToastWrapper";
-import Modal from "@/components/components/Modal/Modal";
+import { CellsBackground, Experience, Footer, Head, Projects, Skills, ToastWrapper } from "@/components/sections";
 
 
 export default function Home() {
@@ -21,13 +15,12 @@ export default function Home() {
         <div className={"flex flex-col gap-8 justify-center  w-full max-w-4xl "}>
           <Head />
           <Skills />
+          <Projects />
           <Experience />
         </div>
         <Footer />
       </main>
       <ToastWrapper />
-
-
     </AppContext>
   );
 }

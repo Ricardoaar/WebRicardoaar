@@ -26,8 +26,6 @@ const ManageButton = ({ children, rotate = false, ...buttonProps }: ManageButton
 
 const Experience = ({ experience, className }: { experience: IExperience, className: string }) => {
   const { company, website, title, years, description, technologies } = experience;
-  const formatter = new Intl.ListFormat("en", { style: "long", type: "conjunction" });
-
 
   return <div className={`flex flex-col gap-2 flex-grow ${className} overflow-x-auto`}>
     <Link className={"w-fit"} aria-label={`Visit ${company} page `} href={website} target={"_blank"}><h3
