@@ -29,12 +29,12 @@ const Experience = ({ experience, className }: { experience: IExperience, classN
   const formatter = new Intl.ListFormat("en", { style: "long", type: "conjunction" });
 
 
-  return <div className={`flex flex-col gap-2 flex-grow ${className}`}>
+  return <div className={`flex flex-col gap-2 flex-grow ${className} overflow-x-auto`}>
     <Link className={"w-fit"} aria-label={`Visit ${company} page `} href={website} target={"_blank"}><h3
       className={"text-2xl font-bold"}>{company}</h3></Link>
     <h4 className={"text-xl"}>{title}</h4>
     <p>{description}</p>
-    <div className={'flex gap-2'}>{technologies.map((technology) => {
+    <div className={"flex gap-2 flex-wrap"}>{technologies.map((technology) => {
       return <Tag key={technology}>
         {technology}
       </Tag>;
@@ -76,8 +76,9 @@ const Experiences = () => {
       {prevExp && <ManageButton onClick={onPrevious}>
         {ARROW_SVG}
       </ManageButton>}
-      <div className={"w-full flex    overflow-x-hidden"} ref={scrollRef}>
-        {EXPERIENCES.map((experience) => <Experience key={experience.title} className={"w-full min-w-[100%]"} experience={experience} />)}
+      <div className={"w-full flex overflow-x-hidden"} ref={scrollRef}>
+        {EXPERIENCES.map((experience) => <Experience key={experience.title} className={"w-full min-w-[100%]"}
+                                                     experience={experience} />)}
       </div>
 
 

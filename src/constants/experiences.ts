@@ -36,7 +36,7 @@ export const EXPERIENCES: IExperience[] = [
     company: "Ocelotbot",
     title: "Fullstack Developer",
     description: "Solved bugs and added new features to the bot and the website",
-    technologies: ["React", "Node", "Typescript", "Javascript", "HTML", "CSS", "NextJS", "MongoDB"],
+    technologies: ["React", "NextJS", "Node", "Typescript", "Javascript", "HTML", "CSS", "NextJS", "MongoDB", "NestJS"],
     website: "https://ocelotbot.com/",
     years: "2023 - current"
   }
