@@ -11,7 +11,7 @@ export const EXPERIENCES: IExperience[] = [
   {
     company: "Freelancer",
     title: "Web Developer",
-    description: "Worked in multiple projects using React, Node, Typescript, Javascript, HTML, CSS",
+    description: "Created important website for clients, using different technology stacks.",
     technologies: ["React", "Node", "Typescript", "Javascript", "HTML", "CSS", "NextJS", "MongoDB"],
     website: "https://www.linkedin.com/in/ricardoaar/",
     years: "2019 - 2022"
@@ -19,7 +19,7 @@ export const EXPERIENCES: IExperience[] = [
   {
     company: "LagInc",
     title: "Game Developer",
-    description: "Worked in multiple projects of different industries using Unity, C#, Javascript, HTML, CSS",
+    description: "Developed funny video games for game jams and personal projects. ",
     technologies: ["Unity", "C#", "Javascript", "HTML", "CSS"],
     website: "https://lag-inc.itch.io/",
     years: "2019 - 2021"
@@ -27,7 +27,7 @@ export const EXPERIENCES: IExperience[] = [
   {
     company: "Ubidots",
     title: "Web Developer",
-    description: "Lead projects and worked in multiple features using React",
+    description: "Lead projects, fix bugs, improve and maintain design systems",
     technologies: ["React", "Node", "Typescript", "Javascript", "HTML", "CSS"],
     website: "https://ubidots.com/",
     years: "2022 - 2023"

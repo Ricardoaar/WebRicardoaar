@@ -6,6 +6,7 @@ import { FadeInDiv } from "@/components/animations/FadeIn";
 import { AnimationTiming } from "@/constants/animations";
 import GrowOnHover from "@/components/animations/GrowOnHover";
 import { ARROW_SVG } from "@/constants/utils.icons";
+import { Tag } from "@/components/components/Tag";
 
 
 type ManageButtonProps = {
@@ -33,7 +34,11 @@ const Experience = ({ experience, className }: { experience: IExperience, classN
       className={"text-2xl font-bold"}>{company}</h3></Link>
     <h4 className={"text-xl"}>{title}</h4>
     <p>{description}</p>
-    <p>{formatter.format(technologies)}</p>
+    <div className={'flex gap-2'}>{technologies.map((technology) => {
+      return <Tag key={technology}>
+        {technology}
+      </Tag>;
+    })}</div>
     <p className={"italic pt-2"}> {years}</p>
   </div>;
 };

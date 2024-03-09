@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import ReactPortal from "@/components/components/Portal/Portal";
 import { FadeInDiv } from "@/components/animations/FadeIn";
+import NoSelectableWrapper from "@/components/components/UtilityComponents/NoSelectableWrapper";
 
 
 const useKeydown = (key: string, callback: (e: KeyboardEvent) => void) => {
@@ -67,7 +68,7 @@ const Modal = ({ children, isOpen: isOpenByOutside, domId = "modal", setIsOpen: 
           duration={1.2}
           ref={modalRef}
           className={`fixed top-[20%] left-[20%] w-[60%] h-[60%] dark:bg-gray-950/95 bg-indigo-200/95 dark:text-white text-gray-800 flex justify-center items-center rounded-md shadow-gray-950 shadow-2xl`}>
-          <div className={"absolute top-3 right-3"}>
+          <NoSelectableWrapper className={"absolute top-3 right-3"} element={"div"}>
             <button
               onClick={() => {
                 setIsOpen(false);
@@ -76,7 +77,7 @@ const Modal = ({ children, isOpen: isOpenByOutside, domId = "modal", setIsOpen: 
               className={"rounded-full dark:bg-indigo-950/60 bg-indigo-100 shadow-sm shadow-gray-950 w-8 h-8"}>
               X
             </button>
-          </div>
+          </NoSelectableWrapper>
           {children}
         </FadeInDiv>
       </div>
