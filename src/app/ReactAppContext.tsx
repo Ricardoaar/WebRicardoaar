@@ -1,5 +1,5 @@
 "use client";
-import React, { PropsWithChildren, ReactPropTypes } from "react";
+import React, { PropsWithChildren, ReactPropTypes, useEffect } from "react";
 import useDarkMode from "@/app/useDarkMode";
 
 
@@ -24,6 +24,10 @@ const ReactAppContext = React.createContext<ReactAppContextType>({
 const AppContext = ({ children }: PropsWithChildren) => {
   const [areAnimationsEnabled, setAreAnimationsEnabled] = React.useState(true);
   const { isDarkModeEnabled, setIsDarkModeEnabled } = useDarkMode();
+
+  useEffect(()=> {
+    setIsDarkModeEnabled(false)
+  },[])
   const enabledAnimations = () => {
     document.body.classList.remove("notransition");
     setAreAnimationsEnabled(true);

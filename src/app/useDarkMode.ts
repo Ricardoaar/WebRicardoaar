@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 const useDarkMode = () => {
-  const [isDarkModeEnabled, setIsDarkModeEnabled] = React.useState(true);
+  const [isDarkModeEnabled, setIsDarkModeEnabled] = React.useState(false);
 
-  const setDarkMode = (enable: boolean) => {
-
-    isDarkModeEnabled && document.querySelector("html")?.classList.remove("dark");
-    !isDarkModeEnabled && document.querySelector("html")?.classList.add("dark");
+  const setDarkMode = useCallback((enable: boolean) => {
+    enable && document.querySelector("html")?.classList.add("dark");
+    !enable && document.querySelector("html")?.classList.remove("dark");
     setIsDarkModeEnabled(enable);
-  };
+  }, []);
+
 
   return {
     isDarkModeEnabled,
