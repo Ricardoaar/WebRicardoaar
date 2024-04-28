@@ -6,7 +6,6 @@ import { ToastContainer } from "react-toastify";
 const ToastWrapper = () => {
   const { isDarkModeEnabled } = useAppContext();
   const theme = isDarkModeEnabled ? "dark" : "light";
-  console.log({isDarkModeEnabled});
   return (
     <ToastContainer
       position={"bottom-left"}
