@@ -17,12 +17,16 @@ const Head = () => {
     </h2>
 
     <article className={"text-center text-md font-light"}>
-      <p>
-        I'm a <strong> FullStack Developer </strong>with 3 years of experience in the field.
+      <p className={'text-justify'}>
+        I am a skilled Full-Stack Developer with three years of hands-on experience in delivering robust and innovative
+        digital solutions. Passionate about creating seamless user experiences from concept to deployment, I specialize
+        in building scalable web applications that empower businesses.
 
       </p>
-      <p>
-        Let's collaborate! you can contact me through my <strong>social media </strong> or my email.
+      <br/>
+      <p className={'text-center'}>
+        Let's collaborate to bring your digital ideas to life! Feel free to reach out via my social media channels or
+        email. I'm excited to connect and create amazing projects!
       </p>
 
     </article>
