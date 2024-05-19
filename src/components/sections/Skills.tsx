@@ -27,7 +27,7 @@ const Skills = () => {
                     className={"w-full justify-center flex flex-col items-center pt-10  md:pt-0"}>
 
 
-    <nav className={"dark:bg-indigo-900/20  shadow-2xl w-full max-w-4xl py-4"}>
+    <nav className={"dark:bg-indigo-900/20  shadow-md w-full max-w-4xl py-4"}>
       <ul className={"flex justify-evenly items-center w-full text-center"}>
         <li>
           <GrowOnHover>
@@ -60,7 +60,7 @@ const Skills = () => {
     </nav>
 
     <div
-      className={"gap-10 overflow-y-scroll pt-2 grid grid-cols-2 md:grid-cols-3 shadow-2xl text-center place-items-center w-full max-w-4xl pb-8 dark:bg-indigo-950/10 md:h-96 h-[27rem] "}>
+      className={"gap-10 overflow-y-scroll pt-2 grid grid-cols-2 md:grid-cols-3 shadow-md text-center place-items-center w-full max-w-4xl pb-8 dark:bg-indigo-950/10 md:h-96 h-[27rem] "}>
       {selectedSkills.map((skill) => {
         return <Skill skill={skill} key={skill.name} />;
       })}

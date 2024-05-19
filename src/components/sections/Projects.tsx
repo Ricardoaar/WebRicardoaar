@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Tag from "../components/Tag/Tag";
 
 interface IProject {
   name: string;
@@ -50,17 +51,24 @@ const Projects = () => {
         {PROJECTS.map(({ websiteUrl, name, imageUrl, technologies, description, repositoryUrl }) =>
 
           <div
-            className={"w-full flex  rounded shadow-xl"}>
-            <div className={"relative  h-[350px] w-[60%]"}>
+            className={"w-full flex  rounded md:shadow-xl shadow-sm md:flex-row flex-col items-center"}>
+            <div className={"relative  h-[350px] md:w-[60%] w-[100%]"}>
               <Image className={"rounded"} fill alt={name} src={imageUrl || ""} quality={100} />
             </div>
             <div className={"flex flex-col  justify-center items-center px-2 mt-4 w-[40%]"}>
               <h4 className={"w-full text-center p-4 text-2xl"}>{name}</h4>
 
               <p className={"text-center"}>{description}</p>
-              <span className={"text-center space-x-2.5 mt-2"}>
+              <span className={"text-center space-x-2.5 mt-2 space-y-2"}>
             <a className={"text-blue-800 inline"} href={websiteUrl} target={"_blank"}>Demo</a>
             <a className={"text-blue-800 inline"} href={repositoryUrl} target={"_blank"}>Code</a>
+
+                <div className={"flex gap-2 justify-center  "}>
+                    {technologies.map((technology) => {
+                      return <Tag>{technology}</Tag>;
+                    })}
+                </div>
+
             </span>
             </div>
           </div>)}
