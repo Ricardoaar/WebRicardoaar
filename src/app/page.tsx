@@ -15,8 +15,8 @@ export default function Home() {
         <div className={"flex flex-col gap-8 justify-center  w-full max-w-4xl "}>
           <Head />
           <Skills />
-          <Projects />
           <Experience />
+          <Projects />
         </div>
         <Footer />
       </main>
