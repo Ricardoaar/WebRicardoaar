@@ -44,7 +44,7 @@ const SpeedDial = ({ icon = "", speedDialOptions = [], setup = defaultSetup }: S
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={"fixed top-10 right-10 flex flex-col gap-2"}
+      className={"fixed top-10 right-10 flex flex-col gap-2 z-20"}
     >
       <button aria-label={"settings"}
               className={"rounded-full bg-blue-100/40 dark:bg-[#24223f] w-12 h-12 flex items-center justify-center shadow-md dark:shadow-gray-950"}

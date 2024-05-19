@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 
 const useDarkMode = () => {
-  const [isDarkModeEnabled, setIsDarkModeEnabled] = React.useState(false);
+  const [isDarkModeEnabled, setIsDarkModeEnabled] = React.useState(true);
 
   const setDarkMode = useCallback((enable: boolean) => {
     enable && document.querySelector("html")?.classList.add("dark");
