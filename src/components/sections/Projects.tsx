@@ -34,7 +34,7 @@ const PROJECTS: IProject[] = [{
   imageUrl: "/avocados.png",
   description: "Avocados Store is a specialized e-commerce platform focused on providing fresh, high-quality avocados to consumers. Built with Next.js, this project utilizes modern web development technologies to deliver a fast, efficient, and user-friendly shopping experience.",
   technologies: ["React", "Node", "Typescript", "Next JS"],
-  websiteUrl: "captain-avocados.vercel.app",
+  websiteUrl: "https://captain-avocados-afdlr44bi-captainrun.vercel.app/",
   repositoryUrl: "https://github.com/Ricardoaar/Captain-Avocados"
 }, {
   name: "Pokechems",
