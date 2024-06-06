@@ -50,11 +50,11 @@ const Project = ({ project }: { project: IProject }) => {
   const { state: showDetails, setTrue: showBackdropDetails, setFalse: hideBackdropDetails } = useToggle();
 
   return <div
-    className={"flex justify-center rounded relative items-center flex-nowrap w-full"}
+    className={"flex justify-center rounded-xl relative items-center flex-nowrap w-full overflow-hidden"}
     onMouseOver={showBackdropDetails}
     onMouseLeave={hideBackdropDetails}>
     <div className={"md:h-[800px]  h-[400px] w-full relative"}>
-      <Image className={"rounded"} fill alt={name} src={imageUrl || ""} quality={100} />
+      <Image className={"rounded-xl"} fill alt={name} src={imageUrl || ""} quality={100} />
     </div>
 
     {showDetails &&
@@ -104,7 +104,7 @@ const Projects: React.FC = () => {
       <div className="w-full relative">
         {focusIndex !== 0 && <button
           onClick={handlePrev}
-          className="absolute left-[2px] top-1/2 p-2 rounded-full z-10 w-10 h-10 dark:bg-blue-950 bg-sky-100"
+          className="absolute left-[2px] top-1/2 p-2 rounded-full z-10 w-10 h-10 shadow-md dark:bg-blue-950 bg-sky-100"
         >
           {ARROW_SVG}
         </button>}
@@ -120,7 +120,7 @@ const Projects: React.FC = () => {
         </section>
         {focusIndex !== PROJECTS.length - 1 && <button
           onClick={handleNext}
-          className="absolute right-[2px] top-1/2  p-2 rounded-full dark:bg-blue-950 bg-sky-100 w-10 h-10 rotate-180 z-10"
+          className="absolute right-[2px] top-1/2  p-2 rounded-full dark:bg-blue-950 shadow-md bg-sky-100 w-10 h-10 rotate-180 z-10"
         >
           {ARROW_SVG}
         </button>}

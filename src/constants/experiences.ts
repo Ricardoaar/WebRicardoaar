@@ -5,6 +5,7 @@ export interface IExperience {
   technologies: string[];
   website: string;
   years: string;
+  
 }
 
 export const EXPERIENCES: IExperience[] = [

@@ -24,44 +24,32 @@ const ManageButton = ({ children, rotate = false, ...buttonProps }: ManageButton
 
 };
 
-const Experience = ({ experience, className }: { experience: IExperience, className: string }) => {
+const Experience = ({ experience, className, odd = false }: {
+  experience: IExperience,
+  className: string,
+  odd: boolean
+}) => {
   const { company, website, title, years, description, technologies } = experience;
 
-  return <div className={`flex flex-col gap-2 flex-grow ${className} overflow-x-auto`}>
-    <Link className={"w-fit"} aria-label={`Visit ${company} page `} href={website} target={"_blank"}><h3
-      className={"text-2xl font-bold"}>{company}</h3></Link>
-    <h4 className={"text-xl"}>{title}</h4>
+  return <div
+    className={`flex flex-col gap-4 flex-grow ${className} overflow-x-auto ${!odd ? "text-right" : "text-left"}`}>
+    <Link className={"w-full"} aria-label={`Visit ${company} page `} href={website} target={"_blank"}>
+      <h3
+        className={"text-2xl font-bold"}>{company}</h3>
+    </Link>
+    <p className={"italic pt-2"}> {years}</p>
+    <h4>{title}</h4>
     <p>{description}</p>
-    <div className={"flex gap-2 flex-wrap"}>{technologies.map((technology) => {
+    <div className={"flex gap-2 flex-wrap justify-center"}>{technologies.map((technology) => {
       return <Tag key={technology}>
         {technology}
       </Tag>;
     })}</div>
-    <p className={"italic pt-2"}> {years}</p>
   </div>;
 };
 
 const Experiences = () => {
 
-  const [currentXp, setCurrentXp] = React.useState<number>(0);
-  const prevExp = EXPERIENCES[currentXp - 1];
-  const nextExp = EXPERIENCES[currentXp + 1];
-
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-
-  useEffect(() => {
-    if (!scrollRef.current) return;
-    scrollRef.current.scrollLeft = scrollRef.current?.offsetWidth * currentXp;
-  }, [currentXp]);
-
-  const onNext = () => {
-    setCurrentXp(currentXp + 1);
-  };
-
-  const onPrevious = () => {
-    setCurrentXp(currentXp - 1);
-  };
 
   return <FadeInDiv
     delay={AnimationTiming.EXPERIENCE.delay}
@@ -70,19 +58,11 @@ const Experiences = () => {
     <h3 className={"text-4xl font-bold text-center"}>
       Professional Experience
     </h3>
-    <div className={"flex gap-6  justify-evenly flex-[0 1 0]"}>
-      {prevExp && <ManageButton onClick={onPrevious}>
-        {ARROW_SVG}
-      </ManageButton>}
-      <div className={"w-full flex overflow-x-hidden"} ref={scrollRef}>
-        {EXPERIENCES.map((experience) => <Experience key={experience.title} className={"w-full min-w-[100%]"}
-                                                     experience={experience} />)}
-      </div>
 
-
-      {nextExp && <ManageButton onClick={onNext} aria-label={"Next"} rotate>
-        {ARROW_SVG}
-      </ManageButton>}
+    <div className={"w-full flex flex-col"}>
+      {EXPERIENCES.map((experience, index) => <Experience odd={index % 2 === 0} key={experience.title}
+                                                          className={"w-full min-w-[100%]"}
+                                                          experience={experience} />)}
     </div>
 
 
