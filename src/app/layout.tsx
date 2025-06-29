@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Ricardo Aar - FullStack Developer",
-  description: "FullStack Developer with 3+ years of experience building scalable web applications. Specialized in React, Node.js, TypeScript, and modern web technologies.",
+  description: "FullStack Developer with 4+ years of experience building scalable web applications. Specialized in React, Node.js, TypeScript, and modern web technologies.",
   keywords: ["FullStack Developer", "React", "Node.js", "TypeScript", "Next.js", "Web Development", "Portfolio"],
   authors: [{ name: "Ricardo Aar" }],
   creator: "Ricardo Aar",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ricardoaar.dev'),
   openGraph: {
     title: "Ricardo Aar - FullStack Developer",
-    description: "FullStack Developer with 3+ years of experience building scalable web applications.",
+    description: "FullStack Developer with 4+ years of experience building scalable web applications.",
     url: 'https://ricardoaar.dev',
     siteName: 'Ricardo Aar Portfolio',
     images: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Ricardo Aar - FullStack Developer",
-    description: "FullStack Developer with 3+ years of experience building scalable web applications.",
+    description: "FullStack Developer with 4+ years of experience building scalable web applications.",
     images: ['/og-image.jpg'],
   },
   robots: {

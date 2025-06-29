@@ -66,11 +66,17 @@ const Experience = ({ experience, index }: { experience: IExperience, index: num
               </div>
 
               {/* External link indicator with better contrast */}
-              <div className="mt-6 flex items-center gap-2 text-primary-600 dark:text-primary-400 text-sm font-medium">
-                <span>Visit company</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
+              <div className="mt-6">
+                <Link 
+                  href={website}
+                  target="_blank"
+                  className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 text-sm font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
+                >
+                  <span>Visit company</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>

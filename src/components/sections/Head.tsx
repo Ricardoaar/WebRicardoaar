@@ -104,7 +104,7 @@ const Head = () => {
             {/* Experience card */}
             <div className="glass-card rounded-2xl p-6 shadow-soft border-l-4 border-l-primary-500 hover:scale-105 transition-transform duration-300">
               <div className="text-3xl mb-3">💼</div>
-              <h3 className="text-xl font-bold text-secondary-800 dark:text-white mb-2">3+ Years Experience</h3>
+              <h3 className="text-xl font-bold text-secondary-800 dark:text-white mb-2">4+ Years Experience</h3>
               <p className="text-secondary-600 dark:text-gray-300 text-sm">
                 Delivering robust and innovative digital solutions across various industries
               </p>
