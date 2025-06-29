@@ -1,20 +1,231 @@
-
-.linear-bg {
-    background: linear-gradient(90deg, #8dd1e7 0%, rgba(219, 231, 226, 0.93) 99.48%);
-}
-
-.dark .linear-bg {
-    background: linear-gradient(90deg, #04002f 0%, rgba(24, 38, 142, 0.82) 99.48%);
-}
+/* Dark mode specific overrides with improved contrast */
 
 .dark .svg__mode {
-    fill: #fff;
+  fill: #ffffff;
 }
 
 .svg__mode {
-    fill: #0d1621;
+  fill: #0f172a;
 }
 
+/* Dark mode specific glass effects with better contrast */
+.dark .glass-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.dark .glass-button {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.dark .glass-button:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Dark mode text gradients with better contrast */
+.dark .text-gradient-primary {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .text-gradient-accent {
+  background: linear-gradient(135deg, #e879f9 0%, #d946ef 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark mode shadows with better visibility */
+.dark .shadow-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.dark .shadow-glow-lg {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+}
+
+/* Dark mode borders with better contrast */
+.dark .border-glow {
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.dark .border-glow-hover:hover {
+  border-color: rgba(59, 130, 246, 0.7);
+}
+
+/* Dark mode backgrounds with better contrast */
+.dark .bg-gradient-dark {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+}
+
+.dark .bg-gradient-dark-alt {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+}
+
+/* Enhanced dark mode text colors for better readability - MUCH WHITER */
+.dark .text-secondary-300 {
+  color: #ffffff;
+}
+
+.dark .text-secondary-400 {
+  color: #f8fafc;
+}
+
+.dark .text-secondary-500 {
+  color: #f1f5f9;
+}
+
+.dark .text-secondary-600 {
+  color: #e2e8f0;
+}
+
+.dark .text-secondary-700 {
+  color: #cbd5e1;
+}
+
+/* Enhanced dark mode background colors for better contrast */
+.dark .bg-secondary-800 {
+  background-color: #1e293b;
+}
+
+.dark .bg-secondary-900 {
+  background-color: #0f172a;
+}
+
+.dark .bg-secondary-950 {
+  background-color: #020617;
+}
+
+/* Enhanced dark mode border colors for better contrast */
+.dark .border-secondary-700 {
+  border-color: #334155;
+}
+
+.dark .border-secondary-800 {
+  border-color: #1e293b;
+}
+
+/* Dark mode specific component overrides */
+.dark .card {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.dark .card-hover:hover {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+.dark .btn-secondary {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+.dark .btn-secondary:hover {
+  background-color: #475569;
+  color: #ffffff;
+}
+
+.dark .btn-ghost {
+  color: #ffffff;
+}
+
+.dark .btn-ghost:hover {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+/* Dark mode section backgrounds */
+.dark .section {
+  background-color: #0f172a;
+}
+
+.dark .section:nth-child(even) {
+  background-color: #1e293b;
+}
+
+/* Dark mode footer enhancements */
+.dark footer {
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+}
+
+.dark footer a {
+  color: #ffffff;
+}
+
+.dark footer a:hover {
+  color: #ffffff;
+}
+
+/* Dark mode speed dial enhancements */
+.dark .speed-dial-button {
+  background-color: rgba(30, 41, 59, 0.9);
+  border-color: rgba(71, 85, 105, 0.5);
+}
+
+.dark .speed-dial-button:hover {
+  background-color: rgba(51, 65, 85, 0.9);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Dark mode social media enhancements */
+.dark .social-media-button {
+  background-color: rgba(30, 41, 59, 0.9);
+  border-color: rgba(71, 85, 105, 0.5);
+}
+
+.dark .social-media-button:hover {
+  background-color: rgba(51, 65, 85, 0.9);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Dark mode text color overrides for better readability - MUCH WHITER */
+.dark .text-white {
+  color: #ffffff;
+}
+
+.dark .text-gray-200 {
+  color: #ffffff;
+}
+
+.dark .text-gray-300 {
+  color: #f8fafc;
+}
+
+.dark .text-gray-400 {
+  color: #f1f5f9;
+}
+
+.dark .text-gray-500 {
+  color: #e2e8f0;
+}
+
+/* Dark mode specific text improvements - MUCH WHITER */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #ffffff;
+}
+
+.dark p {
+  color: #f8fafc;
+}
+
+.dark .text-secondary-200 {
+  color: #ffffff;
+}
+
+.dark .text-secondary-300 {
+  color: #f8fafc;
+}
+
+.dark .text-secondary-400 {
+  color: #f1f5f9;
+}
 
 /* width */
 ::-webkit-scrollbar {

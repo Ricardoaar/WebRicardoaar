@@ -60,25 +60,23 @@ $quantity: 15;
 
   }
 
-  @keyframes move#{$i}{
+  @keyframes move#{$i} {
     @for $step from 0 through $steps {
       #{$step * (100 / $steps)}% {
-        transform: translateX(random(100) - 50vw) translateY(random(100) - 50vh) scale(random(75) / 100 + .25)
-
+        transform: translateX(random(100) - 50vw) translateY(random(100) - 50vh) scale(random(75) / 100 + .25);
       }
     }
   }
-
 }
 
 
 @keyframes drift {
   0% {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
 
   }
   100% {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
 
   }
 }
